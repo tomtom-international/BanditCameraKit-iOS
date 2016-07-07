@@ -93,7 +93,7 @@ restClient.getAPIVersion { (version, revision) in
             // success -> communication initialized properly. You can continue.
             }.failure { (response, error) in
                 //failure -> communication initialization failed. All REST calls will fail.
-                }
+            }
 ```
 
 *The camera's media server works on address ***192.168.1.101*** on port ***80***.*
@@ -136,9 +136,9 @@ restClient.cameraRESTClient.downloadVideo("video-id", fileDestinationPath: "down
 
 ### Viewfinder stream
 
-The Viewfinder stream delivers JPGs at 30 frames per second. JPEG resolution is set to 768x432px. Images are delivered over UDP protocol. Together with the image, the camera sends the presentation timestamp (PTS) of each image. If recording is in progress the PTS matches the PTS of the frame in the recorded video. Otherwise PTS is **0**. The Viewfinder uses 4001 port as default port.
+The Viewfinder stream delivers JPGs at 30 frames per second. JPEG resolution is set to 768x432px. Images are delivered over UDP protocol. Together with the image, the camera sends the presentation timestamp (PTS) of each image. If recording is in progress the PTS matches the PTS of the frame in the recorded video. Otherwise PTS is set to 0. The Viewfinder uses 4001 port as default port.
 
-To receive images you need to implement *ViewfinderStreamDelegate* protocol and create a UDP connection using the *ViewfinderStream* class. The camera starts to send images over UDP as soon as the startViewfinder() REST call is invoked.
+To receive images you need to implement *ViewfinderStreamDelegate* protocol and create a UDP connection using the *ViewfinderStream* class. The camera starts to send images over UDP as soon as the *startViewfinder()* REST call is invoked.
 
 ```swift
 class ViewfinderViewController: ViewfinderStreamDelegate {
@@ -272,7 +272,7 @@ class PreviewStreamControl {
 
 ### Backchannel notifications
 
-Backchannel is used to receive notifications about changes on the camera. For example, if a user presses the Record button on the camera you receive a *recording_started* notification. System alerts are also sent through the backchannel. For example, if the memory or SD card is full you receive a *memory_low* notification. Backchannel communication is performed over TCP protocol. Together with a notification identifier some additional information can be sent from the camera. For a detailed list of notifications take a look at [Backchannel notification](http://developer.tomtom.com/products/sports/cameramediaserver/backchannelnotifications) section of the [Camera Media Server API](http://developer.tomtom.com/products/sports/cameramediaserver) document.
+Backchannel is used to receive notifications about changes on the camera. For example, if a user presses the Record button on the camera you receive a *recording_started* notification. System alerts are also sent through the backchannel. For example, if the memory or SD card is full you receive a *memory_low* notification. Backchannel communication is performed over TCP protocol. Together with a notification identifier some additional information can be sent from the camera. For a detailed list of notifications take a look at [Backchannel notifications](http://developer.tomtom.com/products/sports/cameramediaserver/backchannelnotifications) section of the [Camera Media Server API](http://developer.tomtom.com/products/sports/cameramediaserver) document.
 To receive notifications you need to implement the *BackchannelNotificationDelegate* protocol and create a TCP connection using *BackchannelNotificationStream*. The connection port is defined by the camera and it is defined as part of the *CameraStatus* model.
 
 ```swift
