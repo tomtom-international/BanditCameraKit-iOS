@@ -1,0 +1,20 @@
+{
+  "name": "BanditCameraKit",
+  "version": "1.0",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "summary": "Core source for communication with TomTom Bandit camera media server",
+  "requires_arc": true,
+  "dependencies": {
+    "Alamofire": [
+
+    ],
+    "CocoaAsyncSocket": [
+
+    ]
+  },
+  "source_files": [
+    "**/*.swift"
+  ]
+}

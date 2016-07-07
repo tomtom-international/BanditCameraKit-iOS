@@ -1,0 +1,26 @@
+PODS:
+  - Alamofire (3.4.1)
+  - BanditCameraKit (1.0):
+    - Alamofire
+    - CocoaAsyncSocket
+  - CocoaAsyncSocket (7.4.3):
+    - CocoaAsyncSocket/All (= 7.4.3)
+  - CocoaAsyncSocket/All (7.4.3):
+    - CocoaAsyncSocket/GCD
+    - CocoaAsyncSocket/RunLoop
+  - CocoaAsyncSocket/GCD (7.4.3)
+  - CocoaAsyncSocket/RunLoop (7.4.3)
+
+DEPENDENCIES:
+  - BanditCameraKit (from `../BanditCameraKit/`)
+
+EXTERNAL SOURCES:
+  BanditCameraKit:
+    :path: "../BanditCameraKit/"
+
+SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  BanditCameraKit: c5ddf5dce5961667e8d0999906a7005472460f40
+  CocoaAsyncSocket: a18c75dca4b08723628a0bacca6e94803d90be91
+
+COCOAPODS: 0.39.0

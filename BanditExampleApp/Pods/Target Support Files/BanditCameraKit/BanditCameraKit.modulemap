@@ -1,0 +1,6 @@
+framework module BanditCameraKit {
+  umbrella header "BanditCameraKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
