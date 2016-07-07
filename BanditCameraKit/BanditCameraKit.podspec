@@ -6,5 +6,6 @@ Pod::Spec.new do |s|
 	s.requires_arc = true
 	s.dependency 'Alamofire'
 	s.dependency 'CocoaAsyncSocket'
-  	s.source_files= ['**/*.swift']
+  	s.source_files = { :git => 'https://github.com/tomtom-international/BanditCameraKit-iOS.git', :tag => s.version }
 end
+
